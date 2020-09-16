@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <button className='alert alert-danger'>click</button>
       </header>
     </div>
   );
