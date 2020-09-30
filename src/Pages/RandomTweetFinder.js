@@ -1,9 +1,12 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 class RandomTweetFinder extends React.Component {
    render(){
        return(<div>
-           <h1>RandomTweetFinder</h1>
+           <Container className='form-row py-1'>
+                    <input className='form-control' name="search" type="text" placeholder="Search?" />
+                </Container>
        </div>)
    }
 }

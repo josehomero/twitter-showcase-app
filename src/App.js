@@ -4,7 +4,7 @@ import {Route, BrowserRouter as Router, Switch, Link} from "react-router-dom"
 import Home from './Pages/Home'
 import UserTweet from './Pages/UserTweet'
 import RandomTweetFinder from './Pages/RandomTweetFinder'
-import Header from './components/Header'
+
 
 
 function App() {
@@ -17,14 +17,13 @@ function App() {
             <Link to='/'>Home</Link>
           </li>
           <li>
-          <Link to='/randomtweetfinder'>randomtweetfinder</Link>
+          <Link to='/randomtweetfinder'>Random tweet finder</Link>
           </li>
           <li>
-          <Link to='/usertweet'>usertweet</Link>
+          <Link to='/usertweet'>User tweet</Link>
           </li>
         </ul>
       </nav>
-<Header />
       <Switch>
         <Route path='/randomtweetfinder' component={RandomTweetFinder} />
         <Route path='/usertweet' component={UserTweet} />
