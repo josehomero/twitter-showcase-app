@@ -5,27 +5,25 @@ class RandomTweetFinder extends React.Component {
     constructor() {
         super()
         this.state = {
-            submitted: 'Submitted'
+            submit: 'Submitted'
         }
-        this.handleClick = this.handleClick.bind(this)
+        this.submitted = this.submitted.bind(this)
     }
 
-    handleClick(e) {
+    submitted(e) {
         e.preventDefault()
-        return (<div>
-            <h2>Searched Tweet</h2>
-        </div>)
+        return this.state.submit
     }
 
     render() {
         return (<div>
             <Container className='form-row py-1'>
-                <form onClick={this.handleClick}>
+                <form onSubmit={this.submitted}>
                     <input className='form-control' name="search" type="text" placeholder="Search?" />
                     <button className='btn btn-primary'>Submit</button>
                 </form>
             </Container>
-            <h2></h2>
+        <h2>{this.state.submit}</h2>
         </div>)
     }
 }
