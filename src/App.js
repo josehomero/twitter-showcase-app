@@ -10,17 +10,17 @@ import RandomTweetFinder from './Pages/RandomTweetFinder'
 function App() {
   return (
     <Router>
-      <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to='/'>Home</Link>
+      <div className='App'>
+      <nav className='navbar navbar-expand-lg navbar-light bg-light' className='navbar navbar-dark bg-primary'>
+        <ul className='navbar-nav'>
+          <li className='nav-item'>
+            <Link className='nav-link' to='/'>Home</Link>
           </li>
-          <li>
-          <Link to='/randomtweetfinder'>Random tweet finder</Link>
+          <li className='nav-item'>
+          <Link className='nav-link' to='/randomtweetfinder'>Random tweet finder</Link>
           </li>
-          <li>
-          <Link to='/usertweet'>User tweet</Link>
+          <li className='nav-item'>
+          <Link className='nav-link' to='/usertweet'>User tweet</Link>
           </li>
         </ul>
       </nav>

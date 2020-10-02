@@ -7,7 +7,7 @@ class Home extends React.Component {
         return (<div>
             <h1>Twitter Showcase App!</h1>
 
-            <img src={Corvette} alt='corvette' width='300' height='300' />
+            <img src={Corvette} className='float-right' alt='corvette' width='300' height='300' />
 
             <h2>
             This app utilizes data from the Twitter API to allow a person to search for recent
