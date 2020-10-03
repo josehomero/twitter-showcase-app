@@ -8,11 +8,7 @@ class RandomTweetFinder extends React.Component {
 
         }
         this.submitted = this.submitted.bind(this)
-    }
-
-    submitted(e) {
-        e.preventDefault()
-        console.log('submitted')
+        this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(e) {
@@ -23,10 +19,15 @@ class RandomTweetFinder extends React.Component {
         console.log(value)
     }
 
+    submitted(e) {
+        e.preventDefault()
+        this.state.name
+    }
+
     render() {
         return (<div>
             <Container className='form-row py-1'>
-                <form onSubmit={this.submitted}>
+                <form onSubmit={this.handleChange}>
                     <input className='form-control'
                      name="search" type="text" 
                      placeholder="Search?"
@@ -35,7 +36,7 @@ class RandomTweetFinder extends React.Component {
                     <button className='btn btn-primary'>Submit</button>
                 </form>
             </Container>
-        <h2>{this.state.submit}</h2>
+        <h2>{this.state.name}</h2>
         </div>)
     }
 }
