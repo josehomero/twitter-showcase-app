@@ -1,11 +1,17 @@
 import React from 'react'
 
 class UserTweet extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            loaded: 'Random tweet'
+        }
+    }
+
    render(){
        return(<div>
-           <h1>User tweet</h1>
+           <h1>{this.state.loaded}</h1>
        </div>)
-       /* when page opens a random h2 will appear that says random tweet */
    }
 }
 
