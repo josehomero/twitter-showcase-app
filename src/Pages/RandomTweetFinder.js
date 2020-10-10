@@ -23,6 +23,7 @@ class RandomTweetFinder extends React.Component {
         this.setState({
             name: this.state.search,
         })
+ 
         e.target.reset()
     }
 
