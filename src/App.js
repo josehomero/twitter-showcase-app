@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios'
 import { Container } from 'react-bootstrap';
 import {Route, BrowserRouter as Router, Switch, Link} from "react-router-dom"
 import Home from './Pages/Home'
@@ -8,6 +9,19 @@ import RandomTweetFinder from './Pages/RandomTweetFinder'
 
 
 function App() {
+const [items, setItems] = useState([])
+const [isLoading, setIsLoading] = useState(true)
+
+useEffect (() => {
+  const fetchItems = async () => {
+    const result = await axios(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=andysterks`)
+    console.log(result.data)
+  }
+  fetchItems()
+}
+
+)
+
   return (
     <Router>
       <div className='App'>
