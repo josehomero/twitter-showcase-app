@@ -18,9 +18,7 @@ useEffect (() => {
     console.log(result.data)
   }
   fetchItems()
-}
-
-)
+}, [])
 
   return (
     <Router>
