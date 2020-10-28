@@ -9,7 +9,7 @@ import RandomTweetFinder from './Pages/RandomTweetFinder'
 
 
 function App() {
-const [items, setItems] = useState([])
+/* const [items, setItems] = useState([])
 const [isLoading, setIsLoading] = useState(true)
 
 useEffect (() => {
@@ -18,7 +18,7 @@ useEffect (() => {
     console.log(result.data)
   }
   fetchItems()
-}, [])
+}, []) */
 
   return (
     <Router>
