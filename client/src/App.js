@@ -9,16 +9,13 @@ import RandomTweetFinder from './Pages/RandomTweetFinder'
 
 
 function App() {
-/* const [items, setItems] = useState([])
-const [isLoading, setIsLoading] = useState(true)
-
 useEffect (() => {
   const fetchItems = async () => {
-    const result = await axios(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=andysterks`)
+    const result = await axios(`api/hello-world`)
     console.log(result.data)
   }
   fetchItems()
-}, []) */
+}, [])
 
   return (
     <Router>
