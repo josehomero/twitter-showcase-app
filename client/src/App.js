@@ -11,7 +11,7 @@ import RandomTweetFinder from './Pages/RandomTweetFinder'
 function App() {
 useEffect (() => {
   const fetchItems = async () => {
-    const result = await axios(`api/hello-world`)
+    const result = await axios(`api/get-tweet-data`)
     console.log(result.data)
   }
   fetchItems()
