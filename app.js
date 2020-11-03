@@ -1,16 +1,27 @@
 import axios from 'axios'
+const app = express()
 import { request } from 'http'
 
 const express = require('express')
 const path = require('path')
 
-const app = express()
 
- app.use(express.static(path.join(__dirname, 'client/build')))
+app.get("api/get-tweet-data", (req, res) => {
+    const config = {
+        headers: {
+        Authorization: "Bearer [AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et]"  
+        }
+    }
+    axios
+        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=andysterks", 
+        config)
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log(error))
+})
 
- app.get('api/get-tweet-data', (req, res) => {
-     request( "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=andysterks?key"
- })
+app.use(express.static(path.join(__dirname, 'client/build')))
+
+
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
