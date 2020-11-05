@@ -8,17 +8,16 @@ import RandomTweetFinder from './Pages/RandomTweetFinder'
 
 
 
-class App extends React.Component {
+const App = () => {
 
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(`api/get-tweet-data`)
-      console.log(result.data)
+      console.log(result)
     }
     fetchItems()
   }, [])
 
-render() {
     return (
       <Router>
         <div className='App'>
@@ -44,6 +43,5 @@ render() {
       </Router>
     );
   }
-}
 
 export default App;

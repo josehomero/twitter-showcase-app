@@ -1,10 +1,7 @@
-import axios from 'axios'
-const app = express()
-import { request } from 'http'
-
 const express = require('express')
 const path = require('path')
-
+const axios = require('axios')
+const app = express()
 
 app.get("api/get-tweet-data", (req, res) => {
     const config = {
