@@ -10,38 +10,38 @@ import RandomTweetFinder from './Pages/RandomTweetFinder'
 
 const App = () => {
 
-  useEffect(() => {
+/*   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(`/api/get-tweet-data`)
       console.log(result)
     }
     fetchItems()
-  }, [])
+  }, []) */
 
-    return (
-      <Router>
-        <div className='App'>
-          <nav className='navbar navbar-expand-lg navbar-light bg-light' className='navbar navbar-dark bg-primary'>
-            <ul className='navbar-nav'>
-              <li className='nav-item'>
-                <Link className='nav-link' to='/'>Home</Link>
-              </li>
-              <li className='nav-item'>
-                <Link className='nav-link' to='/randomtweetfinder'>Random tweet finder</Link>
-              </li>
-              <li className='nav-item'>
-                <Link className='nav-link' to='/usertweet'>User tweet</Link>
-              </li>
-            </ul>
-          </nav>
-          <Switch>
-            <Route path='/randomtweetfinder' component={RandomTweetFinder} />
-            <Route path='/usertweet' component={UserTweet} />
-            <Route path='/' component={Home} />
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+  return (
+    <Router>
+      <div className='App'>
+        <nav className='navbar navbar-expand-lg navbar-light bg-light' className='navbar navbar-dark bg-primary'>
+          <ul className='navbar-nav'>
+            <li className='nav-item'>
+              <Link className='nav-link' to='/'>Home</Link>
+            </li>
+            <li className='nav-item'>
+              <Link className='nav-link' to='/randomtweetfinder'>Random tweet finder</Link>
+            </li>
+            <li className='nav-item'>
+              <Link className='nav-link' to='/usertweet'>User tweet</Link>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route path='/randomtweetfinder' component={RandomTweetFinder} />
+          <Route path='/usertweet' component={UserTweet} />
+          <Route path='/' component={Home} />
+        </Switch>
+      </div>
+    </Router>
+  );
+}
 
 export default App;

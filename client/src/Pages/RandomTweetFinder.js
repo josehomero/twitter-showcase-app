@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import axios from 'axios'
 
 class RandomTweetFinder extends React.Component {
     constructor() {
@@ -25,6 +26,14 @@ class RandomTweetFinder extends React.Component {
         })
  
         e.target.reset()
+    }
+
+    componentDidMount() {
+        const fetchItems = async () => {
+            const result = await axios(`/api/search-data`)
+            console.log(result)
+        }
+        fetchItems()
     }
 
     render() {
