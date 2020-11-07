@@ -2,6 +2,11 @@ import React from 'react'
 import Corvette from '../images/corvette.png.jpg'
 
 class Home extends React.Component {
+constructor() {
+    super()
+    this.state = {}
+}
+    
 
     render() {
         return (<div>
