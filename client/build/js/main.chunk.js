@@ -30,7 +30,7 @@ var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter
 const App = () => {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     const fetchItems = async () => {
-      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`api/get-tweet-data`);
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/get-tweet-data`);
       console.log(result);
     };
 
@@ -427,5 +427,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

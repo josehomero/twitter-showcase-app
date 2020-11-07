@@ -12,7 +12,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios(`api/get-tweet-data`)
+      const result = await axios(`/api/get-tweet-data`)
       console.log(result)
     }
     fetchItems()
