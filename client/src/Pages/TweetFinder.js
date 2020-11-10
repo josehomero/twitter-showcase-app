@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import axios from 'axios'
 
-class RandomTweetFinder extends React.Component {
+class TweetFinder extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -55,4 +55,4 @@ class RandomTweetFinder extends React.Component {
     }
 }
 
-export default RandomTweetFinder
+export default TweetFinder

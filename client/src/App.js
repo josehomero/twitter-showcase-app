@@ -1,22 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'
-import { Container } from 'react-bootstrap';
+import React from 'react';
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom"
 import Home from './Pages/Home'
 import UserTweet from './Pages/UserTweet'
-import RandomTweetFinder from './Pages/RandomTweetFinder'
+import TweetFinder from './Pages/TweetFinder'
 
 
 
 const App = () => {
 
-/*   useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(`/api/get-tweet-data`)
-      console.log(result)
-    }
-    fetchItems()
-  }, []) */
 
   return (
     <Router>
@@ -27,15 +18,15 @@ const App = () => {
               <Link className='nav-link' to='/'>Home</Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='/randomtweetfinder'>Random tweet finder</Link>
+              <Link className='nav-link' to='/tweetfinder'>Tweet Finder</Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='/usertweet'>User tweet</Link>
+              <Link className='nav-link' to='/usertweet'>User Tweet</Link>
             </li>
           </ul>
         </nav>
         <Switch>
-          <Route path='/randomtweetfinder' component={RandomTweetFinder} />
+          <Route path='/tweetfinder' component={TweetFinder} />
           <Route path='/usertweet' component={UserTweet} />
           <Route path='/' component={Home} />
         </Switch>

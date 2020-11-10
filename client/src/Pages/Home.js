@@ -1,19 +1,10 @@
 import React from 'react'
 import Corvette from '../images/corvette.png.jpg'
-import axios from 'axios'
 
 class Home extends React.Component {
     constructor() {
         super()
         this.state = {}
-    }
-
-    componentDidMount() {
-        const fetchItems = async () => {
-            const result = await axios(`/api/get-tweet-data`)
-            console.log(result)
-        }
-        fetchItems()
     }
 
     render() {
