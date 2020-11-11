@@ -343,7 +343,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_TwitterUsers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TwitterUsers */ "./src/components/TwitterUsers.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\Pages\\UserTweet.js";
+
+
 
 
 
@@ -351,14 +355,17 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor() {
     super();
     this.state = {
-      loaded: 'Random tweet'
+      andy: []
     };
   }
 
   componentDidMount() {
     const fetchItems = async () => {
       const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-tweet`);
-      console.log(result);
+      this.setState = {
+        andy: [result]
+      };
+      console.log(this.state.andy);
     };
 
     fetchItems();
@@ -369,22 +376,26 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
-        columnNumber: 15
+        lineNumber: 28,
+        columnNumber: 17
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22,
-        columnNumber: 12
-      }
-    }, this.state.loaded));
+    });
   }
 
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (UserTweet);
+
+/***/ }),
+
+/***/ "./src/components/TwitterUsers.js":
+/*!****************************************!*\
+  !*** ./src/components/TwitterUsers.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\components\\TwitterUsers.js: Unexpected token, expected \"...\" (6:42)\n\n\u001b[0m \u001b[90m 4 | \u001b[39m   \u001b[0m\n\u001b[0m \u001b[90m 5 | \u001b[39m        \u001b[36mreturn\u001b[39m(\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mimg\u001b[39m {\u001b[90m/* src={props.imgUrl} */\u001b[39m}\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mh3\u001b[39m\u001b[33m>\u001b[39m{\u001b[90m/* props.name */\u001b[39m}\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh3\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 8 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mh3\u001b[39m\u001b[33m>\u001b[39m{\u001b[90m/* props.screenName */\u001b[39m}\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh3\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 9 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mp\u001b[39m\u001b[33m>\u001b[39m{\u001b[90m/* props.tweeterDescription */\u001b[39m}\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mp\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at Object._raise (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:766:17)\n    at Object.raiseWithData (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:759:17)\n    at Object.raise (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:753:17)\n    at Object.unexpected (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:8966:16)\n    at Object.expect (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:8952:28)\n    at Object.jsxParseAttribute (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4580:12)\n    at Object.jsxParseOpeningElementAfterName (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4607:28)\n    at Object.jsxParseOpeningElementAt (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4600:17)\n    at Object.jsxParseElementAt (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4632:33)\n    at Object.jsxParseElementAt (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4648:32)");
 
 /***/ }),
 
