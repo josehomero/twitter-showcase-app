@@ -15,9 +15,9 @@ class UserTweet extends React.Component {
     componentDidMount() {
         const fetchItems = async () => {
             const result = await axios(`/api/user-tweet`)
-            this.setState = {
-                andy: [result]
-            }
+            this.setState({
+                andy: result.data
+            })
             console.log(this.state.andy)
 
         }
@@ -26,17 +26,13 @@ class UserTweet extends React.Component {
 
     render() {
         return (<div>
-{/*             <Container className='form-row py-1'>
+            <Container className='form-row py-1'>
                 <TwitterUsers
-                    imgUrl=""
-                    name=""
-                    screenName=""
-                    tweeterDescription=""
-                    followers=""
+                    twitterPeople= {this.state.andy}
                 />
             </Container>
 
-            <Container className='form-row py-1'>
+{/*             <Container className='form-row py-1'>
                 <TwitterUsers
                     imgUrl=""
                     name=""
