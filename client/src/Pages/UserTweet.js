@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import TwitterUsers from '../components/TwitterUsers'
+import TweetCard from '../components/TweetCard'
 
 import { Container } from 'react-bootstrap'
 
@@ -27,7 +27,7 @@ class UserTweet extends React.Component {
     render() {
         return (<div>
             <Container className='form-row py-1'>
-                <TwitterUsers
+                <TweetCard
                     twitterPeople= {this.state.andy}
                 />
             </Container>
