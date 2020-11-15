@@ -28,7 +28,7 @@ class UserTweet extends React.Component {
         return (<div>
             <Container className='form-row py-1'>
                 <TweetCard
-                    twitterPeople= {this.state.andy}
+                    twitterAndy= {this.state.andy}
                 />
             </Container>
 

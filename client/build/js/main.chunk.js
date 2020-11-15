@@ -388,7 +388,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      twitterPeople: this.state.andy,
+      twitterAndy: this.state.andy,
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -419,7 +419,7 @@ var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter
 
 
 function TweetCard(props) {
-  const tweet = props.twitterPeople.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  const tweet = props.twitterAndy.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     key: tweet.id,
     __self: this,
     __source: {
@@ -434,11 +434,18 @@ function TweetCard(props) {
       lineNumber: 6,
       columnNumber: 9
     }
-  }, tweet.created_at), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, tweet.user.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7,
+      columnNumber: 9
+    }
+  }, tweet.user.screen_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
       columnNumber: 9
     }
   }, tweet.text)));
@@ -446,31 +453,26 @@ function TweetCard(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 12,
       columnNumber: 16
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 13
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    src: "https://pbs.twimg.com/profile_images/1021964480593440768/0LloaAKk_normal.jpg",
+    alt: "andy's-pic",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14,
       columnNumber: 13
     }
-  }, tweet), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15,
       columnNumber: 13
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, tweet), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -482,6 +484,13 @@ function TweetCard(props) {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
       columnNumber: 13
     }
   }));
@@ -546,5 +555,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
