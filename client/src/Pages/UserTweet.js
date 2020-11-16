@@ -18,17 +18,22 @@ class UserTweet extends React.Component {
             this.setState({
                 andy: result.data
             })
-            console.log(this.state.andy)
-
         }
         fetchItems()
     }
 
+
     render() {
+const tweet = this.state.andy[0]
+console.log(tweet)
+
         return (<div>
             <Container className='form-row py-1'>
                 <TweetCard
-                    twitterAndy= {this.state.andy}
+                    name={tweet.user.name}
+                    screenName={tweet.user.screen_name}
+
+                    
                 />
             </Container>
 
