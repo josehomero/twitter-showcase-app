@@ -25,7 +25,11 @@ app.get("/api/user-tweet", (req, res) => {
     axios
         .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=andysterks", 
         config)
-        .then((response) => res.send(response.data))
+        .then((response) => {
+            const tweet = []
+            tweet.push(response.data[0])
+            res.send(tweet)
+        })
         .catch((error) => console.log(error))
 })
 

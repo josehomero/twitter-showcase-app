@@ -1,17 +1,14 @@
 import React from "react"
 
-function TweetCard(props) {
+function TweetCard({ user }) {
+    return (
+        <div key={user.id}>
+            <img src={user.profile_image_url} alt="Profile-pic"/>
+            <h3>{user.name}</h3>
+            <p>@{user.screen_name}</p>
+        </div>
+    )
 
-
-
-
-        return(<div>
-
-            <img src="https://pbs.twimg.com/profile_images/1021964480593440768/0LloaAKk_normal.jpg" alt="andy's-pic"/>
-            <h3>props.name</h3>
-            <p>props.screenName</p>
-        </div>)
-    
 }
 
 export default TweetCard

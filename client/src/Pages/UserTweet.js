@@ -24,58 +24,14 @@ class UserTweet extends React.Component {
 
 
     render() {
-const tweet = this.state.andy[0]
-console.log(tweet)
+        const tweet = this.state.andy.map((tweet) => (
+            <TweetCard user={tweet.user} id={tweet.id} />
+        ))
 
         return (<div>
             <Container className='form-row py-1'>
-                <TweetCard
-                    name={tweet.user.name}
-                    screenName={tweet.user.screen_name}
-
-                    
-                />
+                {tweet}
             </Container>
-
-{/*             <Container className='form-row py-1'>
-                <TwitterUsers
-                    imgUrl=""
-                    name=""
-                    screenName=""
-                    tweeterDescription=""
-                    followers=""
-                />
-            </Container>
-
-            <Container className='form-row py-1'>
-                <TwitterUsers
-                    imgUrl=""
-                    name=""
-                    screenName=""
-                    tweeterDescription=""
-                    followers=""
-                />
-            </Container>
-
-            <Container className='form-row py-1'>
-                <TwitterUsers
-                    imgUrl=""
-                    name=""
-                    screenName=""
-                    tweeterDescription=""
-                    followers=""
-                />
-            </Container>
-
-            <Container className='form-row py-1'>
-                <TwitterUsers
-                    imgUrl=""
-                    name=""
-                    screenName=""
-                    tweeterDescription=""
-                    followers=""
-                />
-            </Container> */}
         </div>)
     }
 }
