@@ -8,11 +8,12 @@ class UserTweet extends React.Component {
     constructor() {
         super()
         this.state = {
-            andy:[],
-            corvette:[],
-            twoSetViolin:[],
-            batmanDC:[],
-            starWars:[]
+            andy: [],
+            corvette: [],
+            twoSetViolin: [],
+            batmanDC: [],
+            starWars: [],
+            random: []
         }
     }
 
@@ -58,8 +59,15 @@ class UserTweet extends React.Component {
         fetchItems5()
     }
 
-    
-
+    getRandomData() {
+        const fetchItems = async () => {
+            const result = await axios(`/api/user-random`)
+            this.setState({
+                random: result.data
+            })
+        }
+        fetchItems()
+    }
 
     render() {
         const tweet1 = this.state.andy.map((tweet) => (
@@ -82,27 +90,36 @@ class UserTweet extends React.Component {
             <TweetCard user={tweet.user} id={tweet.id} />
         ))
 
-        return (<div>
-            <Container onClick={() => console.log("this was clicked")} className='form-row py-1'  >
-                {tweet1}
-            </Container>
+        const randomTweet = this.state.random.map((tweet) => (
+            <TweetCard user={tweet.user} id={tweet.id} />
+        ))
 
-            <Container className='form-row py-1'  >
-                {tweet2}
-            </Container>
+        return (
+            <div>
+                <Container className='form-row py-1'>
+                    {tweet1}
+                </Container>
 
-            <Container className='form-row py-1'  >
-                {tweet3}
-            </Container>
+                <Container className='form-row py-1'>
+                    {tweet2}
+                </Container>
 
-            <Container className='form-row py-1'  >
-                {tweet4}
-            </Container>
+                <Container className='form-row py-1'>
+                    {tweet3}
+                </Container>
 
-            <Container className='form-row py-1'  >
-                {tweet5}
-            </Container>
-        </div>)
+                <Container className='form-row py-1'>
+                    {tweet4}
+                </Container>
+
+                <Container className='form-row py-1'>
+                    {tweet5}
+                </Container>
+
+                <Container className='form-row py-1'>
+                    
+                </Container>
+            </div>)
     }
 }
 
