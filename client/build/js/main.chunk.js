@@ -355,29 +355,109 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor() {
     super();
     this.state = {
-      andy: []
+      andy: [],
+      corvette: [],
+      twoSetViolin: [],
+      batmanDC: [],
+      starWars: []
     };
   }
 
   componentDidMount() {
-    const fetchItems = async () => {
-      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-tweet`);
+    const fetchItems1 = async () => {
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-andy`);
       this.setState({
         andy: result.data
       });
     };
 
-    fetchItems();
+    fetchItems1();
+
+    const fetchItems2 = async () => {
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-corvette`);
+      this.setState({
+        corvette: result.data
+      });
+    };
+
+    fetchItems2();
+
+    const fetchItems3 = async () => {
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-twosetviolin`);
+      this.setState({
+        twoSetViolin: result.data
+      });
+    };
+
+    fetchItems3();
+
+    const fetchItems4 = async () => {
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-batman-dc`);
+      this.setState({
+        batmanDC: result.data
+      });
+    };
+
+    fetchItems4();
+
+    const fetchItems5 = async () => {
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-starwars`);
+      this.setState({
+        starWars: result.data
+      });
+    };
+
+    fetchItems5();
   }
 
   render() {
-    const tweet = this.state.andy.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    const tweet1 = this.state.andy.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       user: tweet.user,
       id: tweet.id,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28,
+        lineNumber: 66,
+        columnNumber: 13
+      }
+    }));
+    const tweet2 = this.state.corvette.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      user: tweet.user,
+      id: tweet.id,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70,
+        columnNumber: 13
+      }
+    }));
+    const tweet3 = this.state.twoSetViolin.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      user: tweet.user,
+      id: tweet.id,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 74,
+        columnNumber: 13
+      }
+    }));
+    const tweet4 = this.state.batmanDC.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      user: tweet.user,
+      id: tweet.id,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 78,
+        columnNumber: 13
+      }
+    }));
+    const tweet5 = this.state.starWars.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      user: tweet.user,
+      id: tweet.id,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 82,
         columnNumber: 13
       }
     }));
@@ -385,18 +465,51 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
+        lineNumber: 85,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+      onClick: () => console.log("this was clicked"),
       className: "form-row py-1",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32,
+        lineNumber: 86,
         columnNumber: 13
       }
-    }, tweet));
+    }, tweet1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+      className: "form-row py-1",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 90,
+        columnNumber: 13
+      }
+    }, tweet2), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+      className: "form-row py-1",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 94,
+        columnNumber: 13
+      }
+    }, tweet3), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+      className: "form-row py-1",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 98,
+        columnNumber: 13
+      }
+    }, tweet4), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+      className: "form-row py-1",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102,
+        columnNumber: 13
+      }
+    }, tweet5));
   }
 
 }
@@ -424,6 +537,9 @@ function TweetCard({
 }) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     key: user.id,
+    width: "50",
+    height: "20",
+    className: "bg-info",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -446,14 +562,21 @@ function TweetCard({
       lineNumber: 7,
       columnNumber: 13
     }
-  }, user.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, user.name), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 7,
+      columnNumber: 34
+    }
+  }, "@", user.screen_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
       columnNumber: 13
     }
-  }, "@", user.screen_name));
+  }, "@", user.description));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TweetCard);
@@ -515,5 +638,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
