@@ -3,6 +3,7 @@ import axios from 'axios'
 import TweetCard from '../components/TweetCard'
 
 import { Container } from 'react-bootstrap'
+import { text } from 'express'
 
 class UserTweet extends React.Component {
     constructor() {
@@ -15,7 +16,9 @@ class UserTweet extends React.Component {
             starWars: [],
             random: []
         }
+        this.getRandomData = this.getRandomData.bind(this)
     }
+
 
     componentDidMount() {
         const fetchItems1 = async () => {
@@ -71,32 +74,32 @@ class UserTweet extends React.Component {
 
     render() {
         const tweet1 = this.state.andy.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} />
+            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text}/>
         ))
 
         const tweet2 = this.state.corvette.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} />
+            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text}/>
         ))
 
         const tweet3 = this.state.twoSetViolin.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} />
+            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text} />
         ))
 
         const tweet4 = this.state.batmanDC.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} />
+            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text} />
         ))
 
         const tweet5 = this.state.starWars.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} />
+            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text} />
         ))
 
         const randomTweet = this.state.random.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} />
+            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text}/>
         ))
 
         return (
             <div>
-                <Container className='form-row py-1'>
+                <Container className='form-row py-1' onClick={this.getRandomData}>
                     {tweet1}
                 </Container>
 
@@ -117,7 +120,7 @@ class UserTweet extends React.Component {
                 </Container>
 
                 <Container className='form-row py-1'>
-                    
+                    {randomTweet}
                 </Container>
             </div>)
     }

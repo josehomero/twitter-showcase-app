@@ -1,5 +1,24 @@
 (this["webpackJsonptwitter-showcase-app"] = this["webpackJsonptwitter-showcase-app"] || []).push([["main"],{
 
+/***/ "./node_modules/express/lib sync recursive":
+/*!***************************************!*\
+  !*** ./node_modules/express/lib sync ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function webpackEmptyContext(req) {
+	var e = new Error("Cannot find module '" + req + "'");
+	e.code = 'MODULE_NOT_FOUND';
+	throw e;
+}
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = "./node_modules/express/lib sync recursive";
+
+/***/ }),
+
 /***/ "./src/App.js":
 /*!********************!*\
   !*** ./src/App.js ***!
@@ -345,7 +364,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_TweetCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TweetCard */ "./src/components/TweetCard.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! express */ "./node_modules/express/index.js");
+/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\Pages\\UserTweet.js";
+
 
 
 
@@ -362,6 +384,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       starWars: [],
       random: []
     };
+    this.getRandomData = this.getRandomData.bind(this);
   }
 
   componentDidMount() {
@@ -426,60 +449,66 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     const tweet1 = this.state.andy.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       user: tweet.user,
       id: tweet.id,
+      text: tweet.text,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74,
+        lineNumber: 77,
         columnNumber: 13
       }
     }));
     const tweet2 = this.state.corvette.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       user: tweet.user,
       id: tweet.id,
+      text: tweet.text,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78,
+        lineNumber: 81,
         columnNumber: 13
       }
     }));
     const tweet3 = this.state.twoSetViolin.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       user: tweet.user,
       id: tweet.id,
+      text: tweet.text,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82,
+        lineNumber: 85,
         columnNumber: 13
       }
     }));
     const tweet4 = this.state.batmanDC.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       user: tweet.user,
       id: tweet.id,
+      text: tweet.text,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86,
+        lineNumber: 89,
         columnNumber: 13
       }
     }));
     const tweet5 = this.state.starWars.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       user: tweet.user,
       id: tweet.id,
+      text: tweet.text,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 93,
         columnNumber: 13
       }
     }));
     const randomTweet = this.state.random.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       user: tweet.user,
       id: tweet.id,
+      text: tweet.text,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94,
+        lineNumber: 97,
         columnNumber: 13
       }
     }));
@@ -487,15 +516,16 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98,
+        lineNumber: 101,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
       className: "form-row py-1",
+      onClick: this.getRandomData,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99,
+        lineNumber: 102,
         columnNumber: 17
       }
     }, tweet1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -503,7 +533,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103,
+        lineNumber: 106,
         columnNumber: 17
       }
     }, tweet2), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -511,7 +541,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107,
+        lineNumber: 110,
         columnNumber: 17
       }
     }, tweet3), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -519,7 +549,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111,
+        lineNumber: 114,
         columnNumber: 17
       }
     }, tweet4), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -527,7 +557,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115,
+        lineNumber: 118,
         columnNumber: 17
       }
     }, tweet5), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -535,10 +565,10 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 119,
+        lineNumber: 122,
         columnNumber: 17
       }
-    }));
+    }, randomTweet));
   }
 
 }
@@ -562,12 +592,12 @@ var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter
 
 
 function TweetCard({
-  user
+  user,
+  id,
+  text
 }) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     key: user.id,
-    width: "50",
-    height: "20",
     className: "bg-info",
     __self: this,
     __source: {
@@ -605,7 +635,14 @@ function TweetCard({
       lineNumber: 9,
       columnNumber: 13
     }
-  }, "@", user.description));
+  }, "@", user.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 13
+    }
+  }, text));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TweetCard);
@@ -665,7 +702,205 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project folder\twitter-showcase-app\client\src\index.js */"./src/index.js");
 
 
+/***/ }),
+
+/***/ 1:
+/*!***************************!*\
+  !*** ./streams (ignored) ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 10:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 11:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 12:
+/*!************************!*\
+  !*** crypto (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 13:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 14:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 15:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 16:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 17:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 18:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 2:
+/*!*******************************!*\
+  !*** ./extend-node (ignored) ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 3:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 4:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 5:
+/*!**********************!*\
+  !*** http (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 6:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 7:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 8:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 9:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
