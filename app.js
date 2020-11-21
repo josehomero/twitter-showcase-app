@@ -101,15 +101,19 @@ app.get("/api/user-starwars", (req, res) => {
         .catch((error) => console.log(error))
 })
 
-const randomNumber= Math.floor( Math.random() * 10)
+
 app.get("/api/user-random", (req, res) => {
+    const screenName = req.query.screen_name
+
+    const randomNumber= Math.floor( Math.random() * 10)
+
     const config = {
         headers: {
         Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et"  
         }
     }
     axios
-        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=starwars&count=10", 
+        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=andysterks&count=10", 
         config)
         .then((response) => {
             const tweet = []

@@ -1,8 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 import TweetCard from '../components/TweetCard'
+import RandomTweetCard from '../components/RandomTweetCard'
 
-import { Container } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 
 class UserTweet extends React.Component {
     constructor() {
@@ -73,55 +74,57 @@ class UserTweet extends React.Component {
 
     render() {
         const tweet1 = this.state.andy.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text}/>
+            <TweetCard user={tweet.user} id={tweet.id}/>
         ))
 
         const tweet2 = this.state.corvette.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text}/>
+            <TweetCard user={tweet.user} id={tweet.id}/>
         ))
 
         const tweet3 = this.state.twoSetViolin.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text} />
+            <TweetCard user={tweet.user} id={tweet.id} />
         ))
 
         const tweet4 = this.state.batmanDC.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text} />
+            <TweetCard user={tweet.user} id={tweet.id} />
         ))
 
         const tweet5 = this.state.starWars.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text} />
+            <TweetCard user={tweet.user} id={tweet.id} />
         ))
 
         const randomTweet = this.state.random.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} text={tweet.text}/>
+            <RandomTweetCard user={tweet.user} id={tweet.id} text={tweet.text} 
+            entities={tweet.entities} />
         ))
 
         return (
-            <div>
-                <Container className='form-row py-1' onClick={this.getRandomData}>
+            <Row>
+                <Col className='form-row py-1' onClick={this.getRandomData}>
                     {tweet1}
-                </Container>
+                </Col>
 
-                <Container className='form-row py-1'>
+                <Col className='form-row py-1'>
                     {tweet2}
-                </Container>
+                </Col>
 
-                <Container className='form-row py-1'>
+                <Col className='form-row py-1'>
                     {tweet3}
-                </Container>
+                </Col>
 
-                <Container className='form-row py-1'>
+                <Col className='form-row py-1'>
                     {tweet4}
-                </Container>
+                </Col>
 
-                <Container className='form-row py-1'>
+                <Col className='form-row py-1'>
                     {tweet5}
-                </Container>
+                </Col>
 
-                <Container className='form-row py-1'>
+                <Col className='form-row py-1'>
                     {randomTweet}
-                </Container>
-            </div>)
+                </Col>
+            </Row>
+        )
     }
 }
 
