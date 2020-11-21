@@ -101,9 +101,7 @@ app.get("/api/user-starwars", (req, res) => {
         .catch((error) => console.log(error))
 })
 
-
-const randomNumber=Math.floor( Math.random() * 10)
-
+const randomNumber= Math.floor( Math.random() * 10)
 app.get("/api/user-random", (req, res) => {
     const config = {
         headers: {
@@ -115,7 +113,8 @@ app.get("/api/user-random", (req, res) => {
         config)
         .then((response) => {
             const tweet = []
-            tweet.push(response.data[10])
+            tweet.push(response.data[randomNumber])
+            console.log(randomNumber)
             res.send(tweet)
         })
         .catch((error) => console.log(error))

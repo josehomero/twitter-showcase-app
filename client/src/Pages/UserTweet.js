@@ -3,7 +3,6 @@ import axios from 'axios'
 import TweetCard from '../components/TweetCard'
 
 import { Container } from 'react-bootstrap'
-import { text } from 'express'
 
 class UserTweet extends React.Component {
     constructor() {
