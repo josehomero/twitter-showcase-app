@@ -488,7 +488,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     const randomTweet = this.state.random.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RandomTweetCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
       user: tweet.user,
       id: tweet.id,
-      text: tweet.text,
+      full_text: tweet.full_text,
       entities: tweet.entities,
       __self: this,
       __source: {
@@ -579,7 +579,7 @@ var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter
 function RandomTweetCard({
   user,
   id,
-  text,
+  full_text,
   entities
 }) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -637,7 +637,7 @@ function RandomTweetCard({
       lineNumber: 10,
       columnNumber: 13
     }
-  }, text));
+  }, full_text));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (RandomTweetCard);
@@ -763,5 +763,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
