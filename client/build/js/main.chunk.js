@@ -489,6 +489,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       user: tweet.user,
       id: tweet.id,
       text: tweet.text,
+      entities: tweet.entities,
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -578,7 +579,8 @@ var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter
 function RandomTweetCard({
   user,
   id,
-  text
+  text,
+  entities
 }) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     key: user.id,
@@ -619,7 +621,16 @@ function RandomTweetCard({
       lineNumber: 8,
       columnNumber: 13
     }
-  }, user.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, user.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: entities.media.media_url,
+    alt: "pic",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 14
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -649,8 +660,7 @@ var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter
 
 function TweetCard({
   user,
-  id,
-  text
+  id
 }) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     key: user.id,
@@ -691,14 +701,7 @@ function TweetCard({
       lineNumber: 8,
       columnNumber: 13
     }
-  }, "@", user.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 13
-    }
-  }, text));
+  }, "@", user.description));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TweetCard);

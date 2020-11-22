@@ -94,7 +94,7 @@ class UserTweet extends React.Component {
         ))
 
         const randomTweet = this.state.random.map((tweet) => (
-            <RandomTweetCard user={tweet.user} id={tweet.id} text={tweet.text}/>
+            <RandomTweetCard user={tweet.user} id={tweet.id} text={tweet.text} entities={tweet.entities} />
         ))
 
         return (
