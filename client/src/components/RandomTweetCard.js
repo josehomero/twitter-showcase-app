@@ -1,19 +1,20 @@
 import React from "react"
 
-entitiesMedia() {
-    if(entities.media.length === 0) {
-        return null
-    } else { return src={entities.media[0].media_url} alt="pic" width='150' height='150'}
-}
 
-function RandomTweetCard({ user, id, fullText, entities }) {
-    console.log(entities.media)
+
+function RandomTweetCard({ user, fullText, entities }) {
+    function entitiesMedia() {
+        if(entities.media === null) {
+            return
+        } else { return entities.media[0].media_url }
+    }
+
     return (
-        <div key={user.id} className="bg-info">
+        <div className="bg-info">
             <img src={user.profile_image_url} alt="Profile-pic" />
             <h3>{user.name}</h3> <p>@{user.screen_name}</p>
             <p>{user.description}</p>
-            <img {entitiesMedia} />
+             <img src={entitiesMedia()} width='150' height='150'/>
             {<p>{fullText}</p>}
         </div>
     )

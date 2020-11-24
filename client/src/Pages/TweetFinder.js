@@ -6,7 +6,8 @@ class TweetFinder extends React.Component {
     constructor() {
         super()
         this.state = {
-            name: ''
+            name: '',
+            results: []
         }
         this.submitted = this.submitted.bind(this)
         this.handleChange = this.handleChange.bind(this)

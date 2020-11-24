@@ -74,27 +74,27 @@ class UserTweet extends React.Component {
 
     render() {
         const tweet1 = this.state.andy.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id}/>
+            <TweetCard user={tweet.user} key={tweet.user.id}/>
         ))
 
         const tweet2 = this.state.corvette.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id}/>
+            <TweetCard user={tweet.user} key={tweet.user.id}/>
         ))
 
         const tweet3 = this.state.twoSetViolin.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} />
+            <TweetCard user={tweet.user} key={tweet.user.id} />
         ))
 
         const tweet4 = this.state.batmanDC.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} />
+            <TweetCard user={tweet.user} key={tweet.user.id} />
         ))
 
         const tweet5 = this.state.starWars.map((tweet) => (
-            <TweetCard user={tweet.user} id={tweet.id} />
+            <TweetCard user={tweet.user} key={tweet.user.id} />
         ))
 
         const randomTweet = this.state.random.map((tweet) => (
-            <RandomTweetCard user={tweet.user} id={tweet.id} fullText={tweet.full_text} entities={tweet.entities} />
+            <RandomTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
         ))
 
         return (
