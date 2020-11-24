@@ -583,7 +583,7 @@ function RandomTweetCard({
   entities
 }) {
   function entitiesMedia() {
-    if (entities.media === null) {
+    if (!entities.media) {
       return;
     } else {
       return entities.media[0].media_url;
@@ -769,5 +769,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

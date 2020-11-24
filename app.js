@@ -113,7 +113,7 @@ app.get("/api/user-random", (req, res) => {
         }
     }
     axios
-        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=andysterks&count=10&tweet_mode=extended", 
+        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=starwars&count=10&tweet_mode=extended", 
         config)
         .then((response) => {
             const tweet = []

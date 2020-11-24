@@ -4,7 +4,7 @@ import React from "react"
 
 function RandomTweetCard({ user, fullText, entities }) {
     function entitiesMedia() {
-        if(entities.media === null) {
+        if(!entities.media) {
             return
         } else { return entities.media[0].media_url }
     }
