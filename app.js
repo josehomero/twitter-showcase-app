@@ -102,8 +102,8 @@ app.get("/api/user-starwars", (req, res) => {
 })
 
 
-app.get("/api/user-random", (req, res) => {
-    const screenName = req.query.screen_name
+app.get("/api/user-random?username=${username.user.screen_name}", (req, res) => {
+    const username = req.query.username
 
     const randomNumber= Math.floor( Math.random() * 10)
 
@@ -113,7 +113,7 @@ app.get("/api/user-random", (req, res) => {
         }
     }
     axios
-        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=starwars&count=10&tweet_mode=extended", 
+        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=" + username + "&count=10&tweet_mode=extended", 
         config)
         .then((response) => {
             const tweet = []

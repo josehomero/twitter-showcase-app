@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import TweetCard from '../components/TweetCard'
-import RandomTweetCard from '../components/RandomTweetCard'
+import RenderedTweetCard from '../components/RenderedTweetCard'
 
 import { Col, Row } from 'react-bootstrap'
 
@@ -14,7 +14,8 @@ class UserTweet extends React.Component {
             twoSetViolin: [],
             batmanDC: [],
             starWars: [],
-            random: []
+            random: [],
+            clickedUser:""
         }
         this.getRandomData = this.getRandomData.bind(this)
     }
@@ -62,14 +63,18 @@ class UserTweet extends React.Component {
         fetchItems5()
     }
 
-    getRandomData() {
+    getRandomData(username) {
         const fetchItems = async () => {
-            const result = await axios(`/api/user-random`)
+            const result = await axios(`/api/user-random?username=${username.screen_name}`)
+            
             this.setState({
                 random: result.data
             })
+            
+            
         }
         fetchItems()
+        console.log(username.user.screen_name)
     }
 
     render() {
@@ -94,7 +99,7 @@ class UserTweet extends React.Component {
         ))
 
         const randomTweet = this.state.random.map((tweet) => (
-            <RandomTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
+            <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
         ))
 
         return (
@@ -103,19 +108,19 @@ class UserTweet extends React.Component {
                     {tweet1}
                 </Col>
 
-                <Col className='form-row py-1'>
+                <Col className='form-row py-1' onClick={this.getRandomData}>
                     {tweet2}
                 </Col>
 
-                <Col className='form-row py-1'>
+                <Col className='form-row py-1' onClick={this.getRandomData}>
                     {tweet3}
                 </Col>
 
-                <Col className='form-row py-1'>
+                <Col className='form-row py-1' onClick={this.getRandomData}>
                     {tweet4}
                 </Col>
 
-                <Col className='form-row py-1'>
+                <Col className='form-row py-1' onClick={this.getRandomData}>
                     {tweet5}
                 </Col>
 

@@ -354,7 +354,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_TweetCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TweetCard */ "./src/components/TweetCard.js");
-/* harmony import */ var _components_RandomTweetCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/RandomTweetCard */ "./src/components/RandomTweetCard.js");
+/* harmony import */ var _components_RenderedTweetCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/RenderedTweetCard */ "./src/components/RenderedTweetCard.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\Pages\\UserTweet.js";
 
@@ -372,7 +372,8 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       twoSetViolin: [],
       batmanDC: [],
       starWars: [],
-      random: []
+      random: [],
+      clickedUser: ""
     };
     this.getRandomData = this.getRandomData.bind(this);
   }
@@ -424,15 +425,16 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     fetchItems5();
   }
 
-  getRandomData() {
+  getRandomData(username) {
     const fetchItems = async () => {
-      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-random`);
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-random?username=${username.screen_name}`);
       this.setState({
         random: result.data
       });
     };
 
     fetchItems();
+    console.log(username.user.screen_name);
   }
 
   render() {
@@ -442,7 +444,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77,
+        lineNumber: 82,
         columnNumber: 13
       }
     }));
@@ -452,7 +454,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81,
+        lineNumber: 86,
         columnNumber: 13
       }
     }));
@@ -462,7 +464,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85,
+        lineNumber: 90,
         columnNumber: 13
       }
     }));
@@ -472,7 +474,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89,
+        lineNumber: 94,
         columnNumber: 13
       }
     }));
@@ -482,11 +484,11 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93,
+        lineNumber: 98,
         columnNumber: 13
       }
     }));
-    const randomTweet = this.state.random.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RandomTweetCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    const randomTweet = this.state.random.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RenderedTweetCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
       user: tweet.user,
       key: tweet.user.id,
       fullText: tweet.full_text,
@@ -494,7 +496,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97,
+        lineNumber: 102,
         columnNumber: 13
       }
     }));
@@ -502,7 +504,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101,
+        lineNumber: 106,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
@@ -511,39 +513,43 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102,
+        lineNumber: 107,
         columnNumber: 17
       }
     }, tweet1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
       className: "form-row py-1",
+      onClick: this.getRandomData,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106,
+        lineNumber: 111,
         columnNumber: 17
       }
     }, tweet2), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
       className: "form-row py-1",
+      onClick: this.getRandomData,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 110,
+        lineNumber: 115,
         columnNumber: 17
       }
     }, tweet3), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
       className: "form-row py-1",
+      onClick: this.getRandomData,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114,
+        lineNumber: 119,
         columnNumber: 17
       }
     }, tweet4), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
       className: "form-row py-1",
+      onClick: this.getRandomData,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 118,
+        lineNumber: 123,
         columnNumber: 17
       }
     }, tweet5), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
@@ -551,7 +557,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 122,
+        lineNumber: 127,
         columnNumber: 17
       }
     }, randomTweet));
@@ -563,10 +569,10 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
-/***/ "./src/components/RandomTweetCard.js":
-/*!*******************************************!*\
-  !*** ./src/components/RandomTweetCard.js ***!
-  \*******************************************/
+/***/ "./src/components/RenderedTweetCard.js":
+/*!*********************************************!*\
+  !*** ./src/components/RenderedTweetCard.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -574,10 +580,10 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\components\\RandomTweetCard.js";
+var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\components\\RenderedTweetCard.js";
 
 
-function RandomTweetCard({
+function RenderedTweetCard({
   user,
   fullText,
   entities
@@ -648,7 +654,7 @@ function RandomTweetCard({
   }, fullText));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (RandomTweetCard);
+/* harmony default export */ __webpack_exports__["default"] = (RenderedTweetCard);
 
 /***/ }),
 
@@ -769,5 +775,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

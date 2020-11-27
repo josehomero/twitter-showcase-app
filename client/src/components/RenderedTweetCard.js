@@ -2,7 +2,7 @@ import React from "react"
 
 
 
-function RandomTweetCard({ user, fullText, entities }) {
+function RenderedTweetCard({ user, fullText, entities }) {
     function entitiesMedia() {
         if(!entities.media) {
             return
@@ -21,4 +21,4 @@ function RandomTweetCard({ user, fullText, entities }) {
 
 }
 
-export default RandomTweetCard
+export default RenderedTweetCard
