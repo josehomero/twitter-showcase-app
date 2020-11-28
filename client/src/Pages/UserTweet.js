@@ -64,17 +64,15 @@ class UserTweet extends React.Component {
     }
 
     getRandomData(username) {
+        console.log('star wars tweet', username[0].user.screen_name)
         const fetchItems = async () => {
-            const result = await axios(`/api/user-random?username=${username.screen_name}`)
+            const result = await axios(`/api/user-random?username=${username[0].user.screen_name}`)
             
             this.setState({
                 random: result.data
             })
-            
-            
         }
         fetchItems()
-        console.log(username.user.screen_name)
     }
 
     render() {
@@ -100,27 +98,28 @@ class UserTweet extends React.Component {
 
         const randomTweet = this.state.random.map((tweet) => (
             <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
+            
         ))
 
         return (
             <Row>
-                <Col className='form-row py-1' onClick={this.getRandomData}>
+                <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.andy)}>
                     {tweet1}
                 </Col>
 
-                <Col className='form-row py-1' onClick={this.getRandomData}>
+                <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.corvette)}>
                     {tweet2}
                 </Col>
 
-                <Col className='form-row py-1' onClick={this.getRandomData}>
+                <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.twoSetViolin)}>
                     {tweet3}
                 </Col>
 
-                <Col className='form-row py-1' onClick={this.getRandomData}>
+                <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.batmanDC)}>
                     {tweet4}
                 </Col>
 
-                <Col className='form-row py-1' onClick={this.getRandomData}>
+                <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.starWars)}>
                     {tweet5}
                 </Col>
 

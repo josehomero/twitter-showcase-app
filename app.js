@@ -102,7 +102,7 @@ app.get("/api/user-starwars", (req, res) => {
 })
 
 
-app.get("/api/user-random?username=${username.user.screen_name}", (req, res) => {
+app.get("/api/user-random?username=${username[0].user.screen_name}", (req, res) => {
     const username = req.query.username
 
     const randomNumber= Math.floor( Math.random() * 10)
