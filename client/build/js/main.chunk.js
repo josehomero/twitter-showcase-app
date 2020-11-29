@@ -250,6 +250,7 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
     };
     this.submitted = this.submitted.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.getSearchData = this.getSearchData.bind(this);
   }
 
   handleChange(e) {
@@ -262,33 +263,36 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
     });
   }
 
+  getSearchData(topic) {
+    console.log(this.state.name);
+    /*     const fetchItems = async () => {
+            const result = await axios(`/api/search-data?topic=${this.state.name}`)
+            this.setState({
+                results: result.data
+            })
+        }
+        fetchItems() */
+  }
+
   submitted(e) {
     e.preventDefault();
     this.setState({
       name: this.state.search
     });
+    this.getSearchData();
     e.target.reset();
   }
 
-  getSearchData(topic) {
-    this.submitted();
-    console.log(this.state.name);
-    /*         const fetchItems = async () => {
-                const result = await axios(`/api/search-data?topic=${this.state.name}`)
-                this.setState({
-                    random: result.data
-                })
-            }
-            fetchItems() */
-  }
-
   render() {
+    /*         const renderedTweets = this.state.random.map((tweet) => (
+                <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
+            )) */
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "form-row py-1",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
+        lineNumber: 54,
         columnNumber: 9
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -296,7 +300,7 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47,
+        lineNumber: 55,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -309,7 +313,7 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48,
+        lineNumber: 56,
         columnNumber: 21
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -317,21 +321,21 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55,
+        lineNumber: 63,
         columnNumber: 21
       }
     }, "Submit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57,
+        lineNumber: 65,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58,
+        lineNumber: 66,
         columnNumber: 17
       }
     }, this.state.name)));

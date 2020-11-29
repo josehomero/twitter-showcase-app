@@ -11,6 +11,7 @@ class TweetFinder extends React.Component {
         }
         this.submitted = this.submitted.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.getSearchData = this.getSearchData.bind(this)
     }
 
     handleChange(e) {
@@ -20,28 +21,35 @@ class TweetFinder extends React.Component {
         })
     }
 
+  
+
+    getSearchData(topic) {
+        console.log(this.state.name)
+        
+    /*     const fetchItems = async () => {
+            const result = await axios(`/api/search-data?topic=${this.state.name}`)
+            this.setState({
+                results: result.data
+            })
+        }
+        fetchItems() */
+    }
+
     submitted(e) {
         e.preventDefault()
         this.setState({
             name: this.state.search
         })
-        
+        this.getSearchData()
         e.target.reset()
+       
     }
 
-    getSearchData(topic) {
-        this.submitted()
-        console.log(this.state.name)
-        
-/*         const fetchItems = async () => {
-            const result = await axios(`/api/search-data?topic=${this.state.name}`)
-            this.setState({
-                random: result.data
-            })
-        }
-        fetchItems() */
-    }
     render() {
+/*         const renderedTweets = this.state.random.map((tweet) => (
+            <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
+        )) */
+
         return (
         <div className='form-row py-1'>
                 <form onSubmit={this.submitted}>
