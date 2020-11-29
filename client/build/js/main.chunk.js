@@ -258,7 +258,7 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       value
     } = e.target;
     this.setState({
-      [name]: value
+      name: value
     });
   }
 
@@ -268,7 +268,6 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
     this.setState({
       results: result.data
     });
-    console.log(this.state.results);
     e.target.reset();
   }
 
@@ -762,5 +761,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
