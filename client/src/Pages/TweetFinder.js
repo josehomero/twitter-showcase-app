@@ -9,9 +9,8 @@ class TweetFinder extends React.Component {
             name: '',
             results: []
         }
-        this.submitted = this.submitted.bind(this)
         this.handleChange = this.handleChange.bind(this)
-        this.getSearchData = this.getSearchData.bind(this)
+        this.submitted = this.submitted.bind(this)
     }
 
     handleChange(e) {
@@ -23,27 +22,15 @@ class TweetFinder extends React.Component {
 
   
 
-    getSearchData(topic) {
-        console.log(this.state.name)
-        
-    /*     const fetchItems = async () => {
+    async submitted(e) {
+        e.preventDefault()
             const result = await axios(`/api/search-data?topic=${this.state.name}`)
             this.setState({
                 results: result.data
             })
-        }
-        fetchItems() */
+        e.target.reset()
     }
 
-    submitted(e) {
-        e.preventDefault()
-        this.setState({
-            name: this.state.search
-        })
-        this.getSearchData()
-        e.target.reset()
-       
-    }
 
     render() {
 /*         const renderedTweets = this.state.random.map((tweet) => (
@@ -52,7 +39,6 @@ class TweetFinder extends React.Component {
 
         return (
         <div className='form-row py-1'>
-                <form onSubmit={this.submitted}>
                     <input 
                         className='form-control'
                         name="search" 
@@ -60,11 +46,10 @@ class TweetFinder extends React.Component {
                         placeholder="Search?"
                         onChange={this.handleChange}
                         value={this.state.value} />
-                    <button className='btn btn-primary'>Submit</button>
-                </form>
+                    <button className='btn btn-primary' onClick={this.submitted} >Submit</button>
             <Row>
                 <Col>
-                {this.state.name}
+                {/* {this.state.name} */}
                 </Col>
             </Row>
         </div>)

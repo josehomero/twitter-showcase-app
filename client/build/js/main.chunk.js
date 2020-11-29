@@ -248,9 +248,8 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       name: '',
       results: []
     };
-    this.submitted = this.submitted.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.getSearchData = this.getSearchData.bind(this);
+    this.submitted = this.submitted.bind(this);
   }
 
   handleChange(e) {
@@ -263,23 +262,12 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
     });
   }
 
-  getSearchData(topic) {
-    console.log(this.state.name);
-    /*     const fetchItems = async () => {
-            const result = await axios(`/api/search-data?topic=${this.state.name}`)
-            this.setState({
-                results: result.data
-            })
-        }
-        fetchItems() */
-  }
-
-  submitted(e) {
+  async submitted(e) {
     e.preventDefault();
+    const result = await axios__WEBPACK_IMPORTED_MODULE_2___default()(`/api/search-data?topic=${this.state.name}`);
     this.setState({
-      name: this.state.search
+      results: result.data
     });
-    this.getSearchData();
     e.target.reset();
   }
 
@@ -292,16 +280,8 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 41,
         columnNumber: 9
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-      onSubmit: this.submitted,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 55,
-        columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
       className: "form-control",
@@ -313,32 +293,33 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56,
+        lineNumber: 42,
         columnNumber: 21
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "btn btn-primary",
+      onClick: this.submitted,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63,
+        lineNumber: 49,
         columnNumber: 21
       }
-    }, "Submit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+    }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65,
+        lineNumber: 50,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 51,
         columnNumber: 17
       }
-    }, this.state.name)));
+    })));
   }
 
 }
@@ -780,5 +761,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
