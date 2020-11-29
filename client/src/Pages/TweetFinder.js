@@ -29,7 +29,7 @@ class TweetFinder extends React.Component {
             this.setState({
                 results: result.data
             })
-        e.target.reset()
+            console.log("results",this.state.results)
     }
 
 

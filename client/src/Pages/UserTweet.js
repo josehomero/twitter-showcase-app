@@ -95,7 +95,6 @@ class UserTweet extends React.Component {
 
         const randomTweet = this.state.random.map((tweet) => (
             <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
-            
         ))
 
         return (
