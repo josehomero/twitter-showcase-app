@@ -4,13 +4,14 @@ const axios = require('axios')
 const app = express()
 
  app.get("/api/search-data", (req, res) => {
+    const topic = req.query.topic
     const config = {
         headers: {
         Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et"  
         }
     }
     axios
-        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=andysterks", 
+        .get("https://api.twitter.com/1.1/search/tweets.json?q=" + topic + "&result_type=popular", 
         config)
         .then((response) => res.send(response.data))
         .catch((error) => console.log(error))
@@ -102,7 +103,7 @@ app.get("/api/user-starwars", (req, res) => {
 })
 
 
-app.get("/api/user-random?username=${username[0].user.screen_name}", (req, res) => {
+app.get("/api/user-random", (req, res) => {
     const username = req.query.username
 
     const randomNumber= Math.floor( Math.random() * 10)

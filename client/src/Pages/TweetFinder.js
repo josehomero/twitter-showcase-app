@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 
 class TweetFinder extends React.Component {
@@ -23,23 +23,27 @@ class TweetFinder extends React.Component {
     submitted(e) {
         e.preventDefault()
         this.setState({
-            name: this.state.search,
+            name: this.state.search
         })
- 
+        
         e.target.reset()
     }
 
-    componentDidMount() {
-        const fetchItems = async () => {
-            const result = await axios(`/api/search-data`)
-            console.log(result)
+    getSearchData(topic) {
+        this.submitted()
+        console.log(this.state.name)
+        
+/*         const fetchItems = async () => {
+            const result = await axios(`/api/search-data?topic=${this.state.name}`)
+            this.setState({
+                random: result.data
+            })
         }
-        fetchItems()
+        fetchItems() */
     }
-
     render() {
-        return (<div>
-            <Container className='form-row py-1'>
+        return (
+        <div className='form-row py-1'>
                 <form onSubmit={this.submitted}>
                     <input 
                         className='form-control'
@@ -50,8 +54,11 @@ class TweetFinder extends React.Component {
                         value={this.state.value} />
                     <button className='btn btn-primary'>Submit</button>
                 </form>
-            </Container>
-            <h2>{this.state.name}</h2>
+            <Row>
+                <Col>
+                {this.state.name}
+                </Col>
+            </Row>
         </div>)
     }
 }

@@ -14,8 +14,7 @@ class UserTweet extends React.Component {
             twoSetViolin: [],
             batmanDC: [],
             starWars: [],
-            random: [],
-            clickedUser:""
+            random: []
         }
         this.getRandomData = this.getRandomData.bind(this)
     }
@@ -64,10 +63,8 @@ class UserTweet extends React.Component {
     }
 
     getRandomData(username) {
-        console.log('star wars tweet', username[0].user.screen_name)
         const fetchItems = async () => {
             const result = await axios(`/api/user-random?username=${username[0].user.screen_name}`)
-            
             this.setState({
                 random: result.data
             })
