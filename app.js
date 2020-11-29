@@ -13,7 +13,11 @@ const app = express()
     axios
         .get("https://api.twitter.com/1.1/search/tweets.json?q=" + topic + "&result_type=popular", 
         config)
-        .then((response) => res.send(response.data))
+        .then((response) => {
+            const tweet = []
+            tweet.push(response.data[0])
+            res.send(tweet)
+        })
         .catch((error) => console.log(error))
 })
 
