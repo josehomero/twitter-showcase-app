@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import axios from 'axios'
+import RenderedTweetCard from '../components/RenderedTweetCard'
 
 class TweetFinder extends React.Component {
     constructor() {
@@ -14,46 +15,49 @@ class TweetFinder extends React.Component {
     }
 
     handleChange(e) {
-        const { name, value } = e.target
+        const { value } = e.target
         this.setState({
             name: value,
         })
-        
+
     }
 
-  
 
-    async submitted(e) {        
+
+    async submitted(e) {
         e.preventDefault()
-            const result = await axios(`/api/search-data?topic=${this.state.name}`)
-            this.setState({
-                results: result.data
-            })
-            console.log("results",this.state.results)
+        const result = await axios(`/api/search-data?topic=${this.state.name}`)
+        this.setState({
+            results: result.data
+        })
+
     }
 
 
     render() {
-/*         const renderedTweets = this.state.random.map((tweet) => (
+        console.log(this.state.results)
+        
+        const tweetResults = this.state.results.map((tweet) => (
             <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
-        )) */
+        ))
+
 
         return (
-        <div className='form-row py-1'>
-                    <input 
-                        className='form-control'
-                        name="search" 
-                        type="text"
-                        placeholder="Search?"
-                        onChange={this.handleChange}
-                        value={this.state.value} />
-                    <button className='btn btn-primary' onClick={this.submitted} >Submit</button>
-            <Row>
-                <Col>
-                {/* {this.state.name} */}
-                </Col>
-            </Row>
-        </div>)
+            <div className='form-row py-1'>
+                <input
+                    className='form-control'
+                    name="search"
+                    type="text"
+                    placeholder="Search?"
+                    onChange={this.handleChange}
+                    value={this.state.value} />
+                <button className='btn btn-primary' onClick={this.submitted} >Submit</button>
+                <Row>
+                    <Col>
+                        {tweetResults}
+                    </Col>
+                </Row>
+            </div>)
     }
 }
 

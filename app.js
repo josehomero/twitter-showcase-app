@@ -15,7 +15,7 @@ const app = express()
         config)
         .then((response) => {
             const tweet = []
-            tweet.push(response.data[0])
+            tweet.push(response.data.statuses)
             res.send(tweet)
         })
         .catch((error) => console.log(error))

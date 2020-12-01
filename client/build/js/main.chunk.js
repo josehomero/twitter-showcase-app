@@ -236,7 +236,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_RenderedTweetCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/RenderedTweetCard */ "./src/components/RenderedTweetCard.js");
 var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\Pages\\TweetFinder.js";
+
 
 
 
@@ -254,7 +256,6 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
 
   handleChange(e) {
     const {
-      name,
       value
     } = e.target;
     this.setState({
@@ -268,20 +269,29 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
     this.setState({
       results: result.data
     });
-    console.log("results", this.state.results);
   }
 
   render() {
-    /*         const renderedTweets = this.state.random.map((tweet) => (
-                <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
-            )) */
+    console.log(this.state.results);
+    const tweetResults = this.state.results.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RenderedTweetCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      user: tweet.user,
+      key: tweet.user.id,
+      fullText: tweet.full_text,
+      entities: tweet.entities,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41,
+        columnNumber: 13
+      }
+    }));
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "form-row py-1",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
-        columnNumber: 9
+        lineNumber: 46,
+        columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
       className: "form-control",
@@ -293,8 +303,8 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
-        columnNumber: 21
+        lineNumber: 47,
+        columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "btn btn-primary",
@@ -302,24 +312,24 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50,
-        columnNumber: 21
+        lineNumber: 54,
+        columnNumber: 17
       }
     }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51,
-        columnNumber: 13
+        lineNumber: 55,
+        columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52,
-        columnNumber: 17
+        lineNumber: 56,
+        columnNumber: 21
       }
-    })));
+    }, tweetResults)));
   }
 
 }
