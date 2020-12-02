@@ -17,12 +17,10 @@ class TweetFinder extends React.Component {
     handleChange(e) {
         const { value } = e.target
         this.setState({
-            name: value,
+            name: value
         })
 
     }
-
-
 
     async submitted(e) {
         e.preventDefault()
@@ -35,12 +33,10 @@ class TweetFinder extends React.Component {
 
 
     render() {
-        console.log(this.state.results)
-        
+
         const tweetResults = this.state.results.map((tweet) => (
             <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
         ))
-
 
         return (
             <div className='form-row py-1'>

@@ -174,24 +174,19 @@ var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter
 
 
 class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   render() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11,
+        lineNumber: 7,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12,
+        lineNumber: 8,
         columnNumber: 13
       }
     }, "Twitter Showcase App!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -203,14 +198,14 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14,
+        lineNumber: 10,
         columnNumber: 13
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16,
+        lineNumber: 12,
         columnNumber: 13
       }
     }, "This app utilizes data from the Twitter API to allow a person to search for recent tweets of specific Twitter users. There is also a random tweet showcase for my favorite Twitter users. Give it a try and look around!"));
@@ -272,7 +267,6 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
   }
 
   render() {
-    console.log(this.state.results);
     const tweetResults = this.state.results.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RenderedTweetCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
       user: tweet.user,
       key: tweet.user.id,
@@ -281,7 +275,7 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 38,
         columnNumber: 13
       }
     }));
@@ -290,7 +284,7 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
+        lineNumber: 42,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -303,7 +297,7 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47,
+        lineNumber: 43,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -312,21 +306,21 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 50,
         columnNumber: 17
       }
     }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55,
+        lineNumber: 51,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56,
+        lineNumber: 52,
         columnNumber: 21
       }
     }, tweetResults)));
@@ -771,5 +765,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

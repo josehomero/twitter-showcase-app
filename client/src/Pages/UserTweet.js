@@ -74,11 +74,11 @@ class UserTweet extends React.Component {
 
     render() {
         const tweet1 = this.state.andy.map((tweet) => (
-            <TweetCard user={tweet.user} key={tweet.user.id}/>
+            <TweetCard user={tweet.user} key={tweet.user.id} />
         ))
 
         const tweet2 = this.state.corvette.map((tweet) => (
-            <TweetCard user={tweet.user} key={tweet.user.id}/>
+            <TweetCard user={tweet.user} key={tweet.user.id} />
         ))
 
         const tweet3 = this.state.twoSetViolin.map((tweet) => (

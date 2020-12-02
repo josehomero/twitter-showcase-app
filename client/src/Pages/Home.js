@@ -2,10 +2,6 @@ import React from 'react'
 import Corvette from '../images/corvette.png.jpg'
 
 class Home extends React.Component {
-    constructor() {
-        super()
-        this.state = {}
-    }
 
     render() {
         return (<div>
@@ -18,8 +14,6 @@ class Home extends React.Component {
                 tweets of specific Twitter users. There is also a random tweet showcase for my
                 favorite Twitter users. Give it a try and look around!
             </h2>
-
-
         </div>)
     }
 }

@@ -14,9 +14,7 @@ const app = express()
         .get("https://api.twitter.com/1.1/search/tweets.json?q=" + topic + "&result_type=popular", 
         config)
         .then((response) => {
-            const tweet = []
-            tweet.push(response.data.statuses)
-            res.send(tweet)
+            res.send(response.data.statuses)
         })
         .catch((error) => console.log(error))
 })
