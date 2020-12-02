@@ -3,7 +3,7 @@
 <br>
 An app that showcases tweets from Twitter
 <br>
-[Try it here!](https://nameless-harbor-93873.herokuapp.com/)
+[Try it here!](https://sleepy-temple-19052.herokuapp.com/)
 
 <img width="847" alt="Twitter screenshot" src="https://user-images.githubusercontent.com/58618050/100830119-c93c5a80-3417-11eb-8c6c-d18bbec700f1.PNG">
 
