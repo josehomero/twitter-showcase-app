@@ -3,6 +3,8 @@ const path = require('path')
 const axios = require('axios')
 const app = express()
 
+const PORT = process.env.PORT || 3000
+
 app.get("/api/search-data", (req, res) => {
     const topic = req.query.topic
     const config = {
@@ -128,10 +130,8 @@ app.get("/api/user-random", (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'client/build')))
 
-
-
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 })
 
-app.listen(3000)
+app.listen(PORT, console.log(`Server is listening on port: ${PORT}`))
