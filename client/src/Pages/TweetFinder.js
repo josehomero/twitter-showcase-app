@@ -4,8 +4,8 @@ import axios from 'axios'
 import RenderedTweetCard from '../components/RenderedTweetCard'
 
 class TweetFinder extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             name: '',
             results: []

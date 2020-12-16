@@ -128,7 +128,7 @@ app.get("/api/user-random", (req, res) => {
         .catch((error) => console.log(error))
 })
 
-app.use(express.static(path.join(__dirname, 'client/build')))
+app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))

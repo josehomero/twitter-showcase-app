@@ -11,7 +11,7 @@ An app that showcases tweets from Twitter.
 
 This was a fun project to make. It really pushed the boundaries of my understanding of working with API's.
 
-The most important take away for me in this project is not "am I capable of completing this project"  but "with consistency and dedication I will finish this project"
+The most important take away for me in this project is not "am I capable of completing this project"  but "with consistency and dedication I will finish this project".
 
 ## Author
 

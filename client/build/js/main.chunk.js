@@ -239,8 +239,8 @@ var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter
 
 
 class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: '',
       results: []
@@ -356,64 +356,42 @@ var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter
 
 
 class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      andy: [],
-      corvette: [],
-      twoSetViolin: [],
-      batmanDC: [],
-      starWars: [],
-      random: []
+      users: [{
+        username: 'andy',
+        tweet: {}
+      }, {
+        username: 'corvette',
+        tweet: {}
+      }]
+      /* 
+                  andy: [],
+                  corvette: [],
+                  twoSetViolin: [],
+                  batmanDC: [],
+                  starWars: [],
+                  random: [] */
+
     };
     this.getRandomData = this.getRandomData.bind(this);
   }
 
   componentDidMount() {
-    const fetchItems1 = async () => {
-      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-andy`);
+    const newUsers = Promise.all(this.state.users.map(async user => {
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-${user.username}`);
+      const [tweet] = result.data;
+      const newUser = { ...user
+      };
+      newUser.tweet = tweet;
+      return newUser;
+    }));
+    NewUsers.then(users => {
       this.setState({
-        andy: result.data
-      });
-    };
-
-    fetchItems1();
-
-    const fetchItems2 = async () => {
-      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-corvette`);
-      this.setState({
-        corvette: result.data
-      });
-    };
-
-    fetchItems2();
-
-    const fetchItems3 = async () => {
-      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-twosetviolin`);
-      this.setState({
-        twoSetViolin: result.data
-      });
-    };
-
-    fetchItems3();
-
-    const fetchItems4 = async () => {
-      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-batman-dc`);
-      this.setState({
-        batmanDC: result.data
-      });
-    };
-
-    fetchItems4();
-
-    const fetchItems5 = async () => {
-      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-starwars`);
-      this.setState({
-        starWars: result.data
-      });
-    };
-
-    fetchItems5();
+        users
+      }, () => console.log('new users:', this.state.users));
+    });
   }
 
   getRandomData(username) {
@@ -428,129 +406,38 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   render() {
-    const tweet1 = this.state.andy.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      user: tweet.user,
-      key: tweet.user.id,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77,
-        columnNumber: 13
-      }
-    }));
-    const tweet2 = this.state.corvette.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      user: tweet.user,
-      key: tweet.user.id,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 81,
-        columnNumber: 13
-      }
-    }));
-    const tweet3 = this.state.twoSetViolin.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      user: tweet.user,
-      key: tweet.user.id,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 85,
-        columnNumber: 13
-      }
-    }));
-    const tweet4 = this.state.batmanDC.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      user: tweet.user,
-      key: tweet.user.id,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89,
-        columnNumber: 13
-      }
-    }));
-    const tweet5 = this.state.starWars.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      user: tweet.user,
-      key: tweet.user.id,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93,
-        columnNumber: 13
-      }
-    }));
-    const randomTweet = this.state.random.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RenderedTweetCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      user: tweet.user,
-      key: tweet.user.id,
-      fullText: tweet.full_text,
-      entities: tweet.entities,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 97,
-        columnNumber: 13
-      }
-    }));
+    /*         const tweet1 = this.state.andy.map((tweet) => (
+                <TweetCard user={tweet.user} key={tweet.user.id} />
+            ))
+    
+            const tweet2 = this.state.corvette.map((tweet) => (
+                <TweetCard user={tweet.user} key={tweet.user.id} />
+            ))
+    
+            const tweet3 = this.state.twoSetViolin.map((tweet) => (
+                <TweetCard user={tweet.user} key={tweet.user.id} />
+            ))
+    
+            const tweet4 = this.state.batmanDC.map((tweet) => (
+                <TweetCard user={tweet.user} key={tweet.user.id} />
+            ))
+    
+            const tweet5 = this.state.starWars.map((tweet) => (
+                <TweetCard user={tweet.user} key={tweet.user.id} />
+            )) */
+
+    /* 
+            const randomTweet = this.state.random.map((tweet) => (
+                <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
+            )) */
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101,
+        lineNumber: 87,
         columnNumber: 13
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
-      className: "form-row py-1",
-      onClick: () => this.getRandomData(this.state.andy),
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 102,
-        columnNumber: 17
-      }
-    }, tweet1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
-      className: "form-row py-1",
-      onClick: () => this.getRandomData(this.state.corvette),
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 106,
-        columnNumber: 17
-      }
-    }, tweet2), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
-      className: "form-row py-1",
-      onClick: () => this.getRandomData(this.state.twoSetViolin),
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 110,
-        columnNumber: 17
-      }
-    }, tweet3), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
-      className: "form-row py-1",
-      onClick: () => this.getRandomData(this.state.batmanDC),
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 114,
-        columnNumber: 17
-      }
-    }, tweet4), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
-      className: "form-row py-1",
-      onClick: () => this.getRandomData(this.state.starWars),
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 118,
-        columnNumber: 17
-      }
-    }, tweet5), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
-      className: "form-row py-1",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 122,
-        columnNumber: 17
-      }
-    }, randomTweet));
+    });
   }
 
 }
@@ -578,20 +465,12 @@ function RenderedTweetCard({
   fullText,
   entities
 }) {
-  function entitiesMedia() {
-    if (!entities.media) {
-      return;
-    } else {
-      return entities.media[0].media_url;
-    }
-  }
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bg-info",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 7,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -600,45 +479,45 @@ function RenderedTweetCard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 8,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 9,
       columnNumber: 13
     }
   }, user.name), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 9,
       columnNumber: 34
     }
   }, "@", user.screen_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 10,
       columnNumber: 13
     }
-  }, user.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: entitiesMedia(),
+  }, user.description), !entities.media ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: entities.media[0].media_url,
     width: "150",
     height: "150",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 14
+      lineNumber: 11,
+      columnNumber: 38
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 12,
       columnNumber: 14
     }
   }, fullText));
