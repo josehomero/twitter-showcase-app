@@ -40,10 +40,10 @@ class UserTweet extends React.Component {
             return newUser
         }))
 
-        NewUsers.then(users => {
+        newUsers.then(users => {
             this.setState({
                 users
-            }, () => console.log('new users:', this.state.users))
+            })
         })
     }
 
@@ -59,6 +59,14 @@ class UserTweet extends React.Component {
 
 
     render() {
+        const tweets = this.state.users.map(user => {
+            return (<Col className='form-row py-1' onClick={() => this.getRandomData()}>
+                User
+                <TweetCard user={/* tweetuser */} key={/* tweet.user.id */} />
+            </Col>)
+
+        })
+
         /*         const tweet1 = this.state.andy.map((tweet) => (
                     <TweetCard user={tweet.user} key={tweet.user.id} />
                 ))
@@ -108,6 +116,8 @@ class UserTweet extends React.Component {
                 {/*                 <Col className='form-row py-1'>
                     {randomTweet}
                 </Col> */}
+                {tweets}
+
             </Row>
         )
     }
