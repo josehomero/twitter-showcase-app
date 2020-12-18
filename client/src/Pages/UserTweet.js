@@ -17,6 +17,18 @@ class UserTweet extends React.Component {
                 {
                     username: 'corvette',
                     tweet: {}
+                },
+                {
+                    username: 'twosetViolin',
+                    tweet: {}
+                },
+                {
+                    username: 'batmanDC',
+                    tweet: {}
+                },
+                {
+                    username: 'starwars',
+                    tweet: {}
                 }
             ],
             /* 
@@ -24,8 +36,8 @@ class UserTweet extends React.Component {
                         corvette: [],
                         twoSetViolin: [],
                         batmanDC: [],
-                        starWars: [],
-                        random: [] */
+                        starWars: [] */
+            random: []
         }
         this.getRandomData = this.getRandomData.bind(this)
     }
@@ -47,12 +59,16 @@ class UserTweet extends React.Component {
         })
     }
 
+    isEmpty = (obj) => {
+        return Object.keys(obj).length === 0
+    }
+
     getRandomData(username) {
         const fetchItems = async () => {
-            const result = await axios(`/api/user-random?username=${username[0].user.screen_name}`)
+            const result = await axios(`/api/user-random?username=${username}`)
             this.setState({
                 random: result.data
-            })
+            }, () => console.log("random", this.state.random))
         }
         fetchItems()
     }
@@ -60,64 +76,25 @@ class UserTweet extends React.Component {
 
     render() {
         const tweets = this.state.users.map(user => {
-            return (<Col className='form-row py-1' onClick={() => this.getRandomData()}>
-                User
-                <TweetCard user={/* tweetuser */} key={/* tweet.user.id */} />
-            </Col>)
+            const { tweet } = user
+            console.log('tweet', tweet)
+            if (this.isEmpty(tweet)) return
 
+            return (<Col className='form-row py-1' key={tweet.user.id} onClick={() => this.getRandomData(tweet.user.screen_name)}>
+                <TweetCard user={tweet.user} />
+            </Col>)
         })
 
-        /*         const tweet1 = this.state.andy.map((tweet) => (
-                    <TweetCard user={tweet.user} key={tweet.user.id} />
-                ))
-        
-                const tweet2 = this.state.corvette.map((tweet) => (
-                    <TweetCard user={tweet.user} key={tweet.user.id} />
-                ))
-        
-                const tweet3 = this.state.twoSetViolin.map((tweet) => (
-                    <TweetCard user={tweet.user} key={tweet.user.id} />
-                ))
-        
-                const tweet4 = this.state.batmanDC.map((tweet) => (
-                    <TweetCard user={tweet.user} key={tweet.user.id} />
-                ))
-        
-                const tweet5 = this.state.starWars.map((tweet) => (
-                    <TweetCard user={tweet.user} key={tweet.user.id} />
-                )) */
-        /* 
-                const randomTweet = this.state.random.map((tweet) => (
-                    <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
-                )) */
+        const randomTweet = this.state.random.map((tweet) => (
+            <RenderedTweetCard user={tweet.user} key={tweet.user.id} fullText={tweet.full_text} entities={tweet.entities} />
+        ))
 
         return (
             <Row>
-                {/* <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.andy)}>
-                    {tweet1}
-                </Col>
-
-                <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.corvette)}>
-                    {tweet2}
-                </Col>
-
-                <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.twoSetViolin)}>
-                    {tweet3}
-                </Col>
-
-                <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.batmanDC)}>
-                    {tweet4}
-                </Col>
-
-                <Col className='form-row py-1' onClick={() => this.getRandomData(this.state.starWars)}>
-                    {tweet5}
-                </Col> */}
-
-                {/*                 <Col className='form-row py-1'>
-                    {randomTweet}
-                </Col> */}
                 {tweets}
-
+                <Col className='form-row py-1'>
+                    {randomTweet}
+                </Col>
             </Row>
         )
     }

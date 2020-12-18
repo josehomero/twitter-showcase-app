@@ -337,9 +337,148 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
   !*** ./src/Pages/UserTweet.js ***!
   \********************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\Pages\\UserTweet.js: JSX attributes must only be assigned a non-empty expression (65:32)\n\n\u001b[0m \u001b[90m 63 | \u001b[39m            \u001b[36mreturn\u001b[39m (\u001b[33m<\u001b[39m\u001b[33mCol\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'form-row py-1'\u001b[39m onClick\u001b[33m=\u001b[39m{() \u001b[33m=>\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgetRandomData()}\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 64 | \u001b[39m                \u001b[33mUser\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33mTweetCard\u001b[39m user\u001b[33m=\u001b[39m{\u001b[90m/* tweetuser */\u001b[39m} key\u001b[33m=\u001b[39m{\u001b[90m/* tweet.user.id */\u001b[39m} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 66 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mCol\u001b[39m\u001b[33m>\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 67 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 68 | \u001b[39m        })\u001b[0m\n    at Object._raise (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:766:17)\n    at Object.raiseWithData (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:759:17)\n    at Object.raise (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:753:17)\n    at Object.jsxParseAttributeValue (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4539:16)\n    at Object.jsxParseAttribute (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4587:44)\n    at Object.jsxParseOpeningElementAfterName (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4607:28)\n    at Object.jsxParseOpeningElementAt (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4600:17)\n    at Object.jsxParseElementAt (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4632:33)\n    at Object.jsxParseElementAt (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4648:32)\n    at Object.jsxParseElement (C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\node_modules\\@babel\\parser\\lib\\index.js:4706:17)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_TweetCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TweetCard */ "./src/components/TweetCard.js");
+/* harmony import */ var _components_RenderedTweetCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/RenderedTweetCard */ "./src/components/RenderedTweetCard.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\Pages\\UserTweet.js";
+
+
+
+
+
+
+class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+
+    this.isEmpty = obj => {
+      return Object.keys(obj).length === 0;
+    };
+
+    this.state = {
+      users: [{
+        username: 'andy',
+        tweet: {}
+      }, {
+        username: 'corvette',
+        tweet: {}
+      }, {
+        username: 'twosetViolin',
+        tweet: {}
+      }, {
+        username: 'batmanDC',
+        tweet: {}
+      }, {
+        username: 'starwars',
+        tweet: {}
+      }],
+
+      /* 
+                  andy: [],
+                  corvette: [],
+                  twoSetViolin: [],
+                  batmanDC: [],
+                  starWars: [] */
+      random: []
+    };
+    this.getRandomData = this.getRandomData.bind(this);
+  }
+
+  componentDidMount() {
+    const newUsers = Promise.all(this.state.users.map(async user => {
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-${user.username}`);
+      const [tweet] = result.data;
+      const newUser = { ...user
+      };
+      newUser.tweet = tweet;
+      return newUser;
+    }));
+    newUsers.then(users => {
+      this.setState({
+        users
+      });
+    });
+  }
+
+  getRandomData(username) {
+    const fetchItems = async () => {
+      const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-random?username=${username}`);
+      this.setState({
+        random: result.data
+      }, () => console.log("random", this.state.random));
+    };
+
+    fetchItems();
+  }
+
+  render() {
+    const tweets = this.state.users.map(user => {
+      const {
+        tweet
+      } = user;
+      console.log('tweet', tweet);
+      if (this.isEmpty(tweet)) return;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
+        className: "form-row py-1",
+        key: tweet.user.id,
+        onClick: () => this.getRandomData(tweet.user.screen_name),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83,
+          columnNumber: 21
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        user: tweet.user,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 84,
+          columnNumber: 17
+        }
+      }));
+    });
+    const randomTweet = this.state.random.map(tweet => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RenderedTweetCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      user: tweet.user,
+      key: tweet.user.id,
+      fullText: tweet.full_text,
+      entities: tweet.entities,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 89,
+        columnNumber: 13
+      }
+    }));
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 93,
+        columnNumber: 13
+      }
+    }, tweets, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
+      className: "form-row py-1",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 95,
+        columnNumber: 17
+      }
+    }, randomTweet));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (UserTweet);
 
 /***/ }),
 
@@ -424,6 +563,68 @@ function RenderedTweetCard({
 
 /***/ }),
 
+/***/ "./src/components/TweetCard.js":
+/*!*************************************!*\
+  !*** ./src/components/TweetCard.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\Users\\Joseh\\OneDrive\\Desktop\\project folder\\twitter-showcase-app\\client\\src\\components\\TweetCard.js";
+
+
+function TweetCard({
+  user
+}) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bg-info",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: user.profile_image_url,
+    alt: "Profile-pic",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 13
+    }
+  }, user.name), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 34
+    }
+  }, "@", user.screen_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 13
+    }
+  }, "@", user.description));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TweetCard);
+
+/***/ }),
+
 /***/ "./src/images/corvette.png.jpg":
 /*!*************************************!*\
   !*** ./src/images/corvette.png.jpg ***!
@@ -479,5 +680,5 @@ module.exports = __webpack_require__(/*! C:\Users\Joseh\OneDrive\Desktop\project
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

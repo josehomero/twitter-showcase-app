@@ -79,7 +79,7 @@ app.get("/api/user-batman-dc", (req, res) => {
         }
     }
     axios
-        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=BatmanDC__",
+        .get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=BatmanDC_",
             config)
         .then((response) => {
             const tweet = []
