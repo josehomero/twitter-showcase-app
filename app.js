@@ -9,7 +9,7 @@ app.get("/api/search-data", (req, res) => {
     const topic = req.query.topic
     const config = {
         headers: {
-            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et"
+            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAA6SP2PzSgUmFEBLmsNEs%2F34MkjWI%3DpORhmoezhHOuzmNxxB1dsAflaXW97Z8cmKQhier0keVdCa7a9X"
         }
     }
     axios
@@ -24,7 +24,7 @@ app.get("/api/search-data", (req, res) => {
 app.get("/api/user-andy", (req, res) => {
     const config = {
         headers: {
-            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et"
+            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAA6SP2PzSgUmFEBLmsNEs%2F34MkjWI%3DpORhmoezhHOuzmNxxB1dsAflaXW97Z8cmKQhier0keVdCa7a9X"
         }
     }
     axios
@@ -41,7 +41,7 @@ app.get("/api/user-andy", (req, res) => {
 app.get("/api/user-corvette", (req, res) => {
     const config = {
         headers: {
-            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et"
+            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAA6SP2PzSgUmFEBLmsNEs%2F34MkjWI%3DpORhmoezhHOuzmNxxB1dsAflaXW97Z8cmKQhier0keVdCa7a9X"
         }
     }
     axios
@@ -58,7 +58,7 @@ app.get("/api/user-corvette", (req, res) => {
 app.get("/api/user-twosetviolin", (req, res) => {
     const config = {
         headers: {
-            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et"
+            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAA6SP2PzSgUmFEBLmsNEs%2F34MkjWI%3DpORhmoezhHOuzmNxxB1dsAflaXW97Z8cmKQhier0keVdCa7a9X"
         }
     }
     axios
@@ -75,7 +75,7 @@ app.get("/api/user-twosetviolin", (req, res) => {
 app.get("/api/user-batmanDC", (req, res) => {
     const config = {
         headers: {
-            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et"
+            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAA6SP2PzSgUmFEBLmsNEs%2F34MkjWI%3DpORhmoezhHOuzmNxxB1dsAflaXW97Z8cmKQhier0keVdCa7a9X"
         }
     }
     axios
@@ -92,7 +92,7 @@ app.get("/api/user-batmanDC", (req, res) => {
 app.get("/api/user-starwars", (req, res) => {
     const config = {
         headers: {
-            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et"
+            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAA6SP2PzSgUmFEBLmsNEs%2F34MkjWI%3DpORhmoezhHOuzmNxxB1dsAflaXW97Z8cmKQhier0keVdCa7a9X"
         }
     }
     axios
@@ -114,7 +114,7 @@ app.get("/api/user-random", (req, res) => {
 
     const config = {
         headers: {
-            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAAKFf8DdG4K56GF2Rn9oCsWrLIZ%2BY%3DYu2zoKa4EVpTGDKv4xlDqp4a0krRhaUyrXXwHeE8LL6HlDs9Et"
+            Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAIOxIQEAAAAA6SP2PzSgUmFEBLmsNEs%2F34MkjWI%3DpORhmoezhHOuzmNxxB1dsAflaXW97Z8cmKQhier0keVdCa7a9X"
         }
     }
     axios
