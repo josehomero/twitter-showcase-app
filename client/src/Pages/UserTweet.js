@@ -45,7 +45,7 @@ class UserTweet extends React.Component {
 
     componentDidMount() {
         const newUsers = Promise.all(this.state.users.map(async user => {
-            const result = await axios(`/api/user-${users.username}`)
+            const result = await axios(`/api/user-${user.username}`)
             const [tweet] = result.data
             const newUser = { ...user }
             newUser.tweet = tweet
@@ -80,8 +80,8 @@ class UserTweet extends React.Component {
             console.log('tweet', tweet)
             if (this.isEmpty(tweet)) return
 
-            return (<Col className='form-row py-1' key={tweet.user.id} onClick={() => this.getRandomData(tweet.user.screen_name)}>
-                <TweetCard user={tweet.user} />
+            return (<Col className='form-row py-1' key={tweet.id} onClick={() => this.getRandomData(tweet.screen_name)}>
+                <TweetCard user={tweet} />
             </Col>)
         })
 

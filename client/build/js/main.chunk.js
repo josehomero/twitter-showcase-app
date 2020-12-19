@@ -428,8 +428,8 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       if (this.isEmpty(tweet)) return;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
         className: "form-row py-1",
-        key: tweet.user.id,
-        onClick: () => this.getRandomData(tweet.user.screen_name),
+        key: tweet.id,
+        onClick: () => this.getRandomData(tweet.screen_name),
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -437,7 +437,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           columnNumber: 21
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        user: tweet.user,
+        user: tweet,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -589,7 +589,7 @@ function TweetCard({
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: user.profile_image_url,
+    src: user.user.profile_image_url,
     alt: "Profile-pic",
     __self: this,
     __source: {
@@ -604,21 +604,21 @@ function TweetCard({
       lineNumber: 7,
       columnNumber: 13
     }
-  }, user.name), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, user.user.name), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7,
-      columnNumber: 34
+      columnNumber: 39
     }
-  }, "@", user.screen_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "@", user.user.screen_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8,
       columnNumber: 13
     }
-  }, "@", user.description));
+  }, "@", user.user.description));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TweetCard);
