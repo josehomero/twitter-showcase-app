@@ -45,7 +45,7 @@ class UserTweet extends React.Component {
 
     componentDidMount() {
         const newUsers = Promise.all(this.state.users.map(async user => {
-            const result = await axios(`/api/user-${user.username}`)
+            const result = await axios(`/api/user-${users.username}`)
             const [tweet] = result.data
             const newUser = { ...user }
             newUser.tweet = tweet
