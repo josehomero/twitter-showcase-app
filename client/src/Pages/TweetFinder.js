@@ -26,7 +26,8 @@ class TweetFinder extends React.Component {
         e.preventDefault()
         const result = await axios(`/api/search-data?topic=${this.state.name}`)
         this.setState({
-            results: result.data
+            results: result.data,
+            name:''
         })
 
     }
