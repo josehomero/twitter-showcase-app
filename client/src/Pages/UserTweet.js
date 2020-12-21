@@ -31,12 +31,6 @@ class UserTweet extends React.Component {
                     tweet: {}
                 }
             ],
-            /* 
-                        andy: [],
-                        corvette: [],
-                        twoSetViolin: [],
-                        batmanDC: [],
-                        starWars: [] */
             random: []
         }
         this.getRandomData = this.getRandomData.bind(this)
@@ -68,7 +62,7 @@ class UserTweet extends React.Component {
             const result = await axios(`/api/user-random?username=${username}`)
             this.setState({
                 random: result.data
-            }, () => console.log("random", this.state.random))
+            })
         }
         fetchItems()
     }
@@ -77,10 +71,9 @@ class UserTweet extends React.Component {
     render() {
         const tweets = this.state.users.map(user => {
             const { tweet } = user
-            console.log('tweet', tweet)
             if (this.isEmpty(tweet)) return
 
-            return (<Col className='form-row py-1' key={tweet.id} onClick={() => this.getRandomData(tweet.screen_name)}>
+            return (<Col className='form-row py-1' key={tweet.id} onClick={() => this.getRandomData(tweet.user.screen_name)}>
                 <TweetCard user={tweet} />
             </Col>)
         })

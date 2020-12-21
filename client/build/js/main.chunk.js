@@ -380,13 +380,6 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         username: 'starwars',
         tweet: {}
       }],
-
-      /* 
-                  andy: [],
-                  corvette: [],
-                  twoSetViolin: [],
-                  batmanDC: [],
-                  starWars: [] */
       random: []
     };
     this.getRandomData = this.getRandomData.bind(this);
@@ -413,7 +406,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       const result = await axios__WEBPACK_IMPORTED_MODULE_1___default()(`/api/user-random?username=${username}`);
       this.setState({
         random: result.data
-      }, () => console.log("random", this.state.random));
+      });
     };
 
     fetchItems();
@@ -424,16 +417,15 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       const {
         tweet
       } = user;
-      console.log('tweet', tweet);
       if (this.isEmpty(tweet)) return;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
         className: "form-row py-1",
         key: tweet.id,
-        onClick: () => this.getRandomData(tweet.screen_name),
+        onClick: () => this.getRandomData(tweet.user.screen_name),
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83,
+          lineNumber: 76,
           columnNumber: 21
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TweetCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -441,7 +433,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84,
+          lineNumber: 77,
           columnNumber: 17
         }
       }));
@@ -454,7 +446,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89,
+        lineNumber: 82,
         columnNumber: 13
       }
     }));
@@ -462,7 +454,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93,
+        lineNumber: 86,
         columnNumber: 13
       }
     }, tweets, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
@@ -470,7 +462,7 @@ class UserTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95,
+        lineNumber: 88,
         columnNumber: 17
       }
     }, randomTweet));
