@@ -262,7 +262,8 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
     e.preventDefault();
     const result = await axios__WEBPACK_IMPORTED_MODULE_2___default()(`/api/search-data?topic=${this.state.name}`);
     this.setState({
-      results: result.data
+      results: result.data,
+      name: ''
     });
   }
 
@@ -292,8 +293,9 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       name: "search",
       type: "text",
       placeholder: "Search?",
+      ref: "",
       onChange: this.handleChange,
-      value: this.state.value,
+      value: this.state.name,
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -306,21 +308,21 @@ class TweetFinder extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50,
+        lineNumber: 51,
         columnNumber: 17
       }
     }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51,
+        lineNumber: 52,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52,
+        lineNumber: 53,
         columnNumber: 21
       }
     }, tweetResults)));

@@ -29,7 +29,6 @@ class TweetFinder extends React.Component {
             results: result.data,
             name:''
         })
-
     }
 
 
@@ -46,8 +45,9 @@ class TweetFinder extends React.Component {
                     name="search"
                     type="text"
                     placeholder="Search?"
+                    ref=""
                     onChange={this.handleChange}
-                    value={this.state.value} />
+                    value={this.state.name} />
                 <button className='btn btn-primary' onClick={this.submitted} >Submit</button>
                 <Row>
                     <Col>
